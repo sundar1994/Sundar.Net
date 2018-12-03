@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sundar.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,8 @@ namespace Sundar.MVC
     {
         protected void Application_Start()
         {
+            AutofacExt.InitAutofac();
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -16,6 +16,13 @@ layui.define(["element","jquery"],function(exports){
 				tabFilter : "bodyTab",  //添加窗口的filter
                 url: undefined , //获取菜单json地址
                 defaultDate: [
+                    {
+                        "Item": {
+                            "Id": "4abafc83-c8f5-452f-9882-e113a86e7a3e",
+                            "CascadeId": ".0.2.2.", "Name": "主页", "Url": "/flowinstances/wait", "ParentId": "069475e3-c997-487a-9f29-e6a864c5c1d4", "ParentName": "流程中心", "IconName": "&#xe641;", "Checked": false, "SortNo": 0, "Code": "FlowInstanceWait", "Elements": [{ "DomId": "btnVerification", "Name": "处理", "Attr": "", "Script": "verificationForm()", "Icon": "&#xe68e;", "Class": "layui-btn-normal", "Remark": "", "Sort": 5, "ModuleId": "4abafc83-c8f5-452f-9882-e113a86e7a3e", "TypeName": null, "TypeId": null, "Id": "79dcd3eb-3aaf-4e08-83c9-713d8ff446fe" }, { "DomId": "btnDetail", "Name": "进度详情", "Attr": "", "Script": "", "Icon": "&#xe60a;", "Class": "layui-btn-normal", "Remark": "", "Sort": 4, "ModuleId": "4abafc83-c8f5-452f-9882-e113a86e7a3e", "TypeName": null, "TypeId": null, "Id": "826b12b3-e916-446d-a2fa-329cfd13c831" }]
+                        },
+                        "Children": []
+                    },
                     { // 为了该样式加的，后期后台有数据了删掉
                         "Item":
                             {

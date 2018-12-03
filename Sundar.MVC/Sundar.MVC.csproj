@@ -265,6 +265,20 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sundar.BLL\Sundar.BLL.csproj">
+      <Project>{996894a0-a71e-49b2-9050-1bf72a89893c}</Project>
+      <Name>Sundar.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sundar.Common\Sundar.Common.csproj">
+      <Project>{9217c308-7501-4438-b818-ff9c9cd2de33}</Project>
+      <Name>Sundar.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sundar.Repository\Sundar.Repository.csproj">
+      <Project>{ad429fe5-f573-4911-add5-d30947db9d2e}</Project>
+      <Name>Sundar.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
