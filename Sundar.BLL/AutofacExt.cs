@@ -22,7 +22,7 @@ namespace Sundar.BLL
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).PropertiesAutowired();
 
             //注册工作单元
-            //builder.RegisterType(typeof(UnitWork)).As(typeof(IUnitWork)).PropertiesAutowired();
+            builder.RegisterType(typeof(UnitWork)).As(typeof(IUnitWork)).PropertiesAutowired();
 
             //注册BLL层
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).PropertiesAutowired();

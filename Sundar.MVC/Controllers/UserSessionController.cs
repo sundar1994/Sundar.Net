@@ -1,4 +1,5 @@
 ﻿using Sundar.BLL;
+using Sundar.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace Sundar.MVC.Controllers
         /// </summary>
         public string GetModulesTree()
         {
-            return string.Empty;
+            var moduleTree = ModuleBLL.LoadForUser("").GenerateTree(u => u.Id, u => u.ParentId);
+            
+            return JsonHelper.Instance.Serialize(moduleTree);
         }
 
         public ActionResult Get(int account)
