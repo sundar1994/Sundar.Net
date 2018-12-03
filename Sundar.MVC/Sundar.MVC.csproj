@@ -119,6 +119,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserSessionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,7 +236,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\face.jpg" />
-    <Content Include="Js\Sys\bodyTab.js" />
+    <Content Include="Js\bodyTab.js" />
     <Content Include="Js\Sys\index.js" />
     <Content Include="Js\Sys\leftNav.js" />
     <Content Include="Web.config" />
@@ -254,6 +255,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\layui\lay\modules\mobile\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\UserSession\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\layui\font\iconfont.eot" />

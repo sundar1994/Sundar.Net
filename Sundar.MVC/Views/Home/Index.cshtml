@@ -15,18 +15,21 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/Content/layui/css/layui.css" media="all" />
     <link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
-    <link rel="stylesheet" href="/Css/main.css" media="all" />
+    <link rel="stylesheet" href="/Css/main.css?v=2" media="all" />
+    <style>
+      
+    </style>
 </head>
-<body class="main_body">
-    <div class="layui-layout layui-layout-admin">
+<body class="main_body myselfLayerBody">
+    <div class="layui-layout layui-layout-admin showMenu">
         <!-- 顶部 -->
         <div class="layui-header header">
             <div class="layui-main">
                 <a href="#" class="logo">Sundar.Net</a>
                 <!-- 显示/隐藏菜单 -->
-                <a href="javascript:;" class="iconfont hideMenu icon-menu1"></a>
+                <a href="javascript:;" class="iconfont hideMenu icon-menu1" style="transform: rotate(90deg);"></a>
                 <!-- 搜索 -->
-                <div class="layui-form component">
+                @*<div class="layui-form component">
                     <select name="modules" lay-verify="required" lay-search="">
                         <option value="">直接选择或搜索选择</option>
                         <option value="1">layer</option>
@@ -34,28 +37,28 @@
                         <option value="3">layim</option>
                     </select>
                     <i class="layui-icon">&#xe615;</i>
-                </div>
+                </div>*@
                 <!-- 天气信息 -->
-                <div class="weather" pc>
-                    <div id="tp-weather-widget"></div>
-                    <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
-                    <script>
-tpwidget("init", {
-					    "flavor": "slim",
-					    "location": "WX4FBXXFKE4F",
-					    "geolocation": "enabled",
-					    "language": "zh-chs",
-					    "unit": "c",
-					    "theme": "chameleon",
-					    "container": "tp-weather-widget",
-					    "bubble": "disabled",
-					    "alarmType": "badge",
-					    "color": "#FFFFFF",
-					    "uid": "U9EC08A15F",
-					    "hash": "039da28f5581f4bcb5c799fb4cdfb673"
-					});
-					tpwidget("show");</script>
-                </div>
+                @*<div class="weather" pc>
+                                    <div id="tp-weather-widget"></div>
+                                    <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+                                    <script>
+                tpwidget("init", {
+                                        "flavor": "slim",
+                                        "location": "WX4FBXXFKE4F",
+                                        "geolocation": "enabled",
+                                        "language": "zh-chs",
+                                        "unit": "c",
+                                        "theme": "chameleon",
+                                        "container": "tp-weather-widget",
+                                        "bubble": "disabled",
+                                        "alarmType": "badge",
+                                        "color": "#FFFFFF",
+                                        "uid": "U9EC08A15F",
+                                        "hash": "039da28f5581f4bcb5c799fb4cdfb673"
+                                    });
+                                    tpwidget("show");</script>
+                                </div>*@
                 <!-- 顶部右侧菜单 -->
                 <ul class="layui-nav top_menu">
                     <li class="layui-nav-item" mobile>
@@ -84,7 +87,7 @@ tpwidget("init", {
         <div class="layui-body layui-form">
             <div class="layui-tab layui-tab-card marg0" lay-filter="bodyTab" id="top_tabs_box">
                 <ul class="layui-tab-title top_tab" id="top_tabs">
-                    <li class="layui-this" lay-id=""><i class="iconfont icon-computer"></i> <cite>后台首页</cite></li>
+                    <li class="layui-this" lay-id=""><cite>后台首页</cite></li>
                 </ul>
                 <ul class="layui-nav closeBox">
                     <li class="layui-nav-item">
@@ -103,6 +106,11 @@ tpwidget("init", {
                 </div>
             </div>
         </div>
+        
+        <!-- 底部内容 -->
+        <div class="layui-footer footer">
+            <p>copyright &copy; yubaolee　　<a onclick="donation()" class="layui-btn layui-btn-danger l·ayui-btn-small">捐赠作者</a></p>
+        </div>
     </div>
 
     <!-- 移动导航 -->
@@ -111,6 +119,6 @@ tpwidget("init", {
 
     <script type="text/javascript" src="~/Content/layui/layui.js"></script>
     <script type="text/javascript" src="~/js/Sys/leftNav.js"></script>
-    <script type="text/javascript" src="~/js/Sys/index.js"></script>
+    <script type="text/javascript" src="~/js/Sys/index.js?v=55"></script>
 </body>
 </html>

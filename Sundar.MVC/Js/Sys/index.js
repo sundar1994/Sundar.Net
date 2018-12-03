@@ -8,7 +8,7 @@ layui.config({
     $ = layui.jquery;
     tab = layui.bodyTab({
         openTabNum: "50",  //最大可打开窗口数量
-        url: "/UserSession/GetModulesTree" //获取菜单json地址
+        url: "/UserSession/GetModulesTree"//获取菜单json地址
     });
 
     //更换皮肤
@@ -23,7 +23,7 @@ layui.config({
                 $(".hideMenu").css("background-color", skin.split(',')[2]);
             }
         } else {
-            $("body").addClass("blue");
+           // $("body").addClass("blue");
         }
     }
     skins();
@@ -135,6 +135,13 @@ layui.config({
 
     //隐藏左侧导航
     $(".hideMenu").click(function () {
+        var flag = $(this).css("transform");
+        if (flag == "matrix(6.12323e-17, 1, -1, 6.12323e-17, 0, 0)") {
+            $(this).css({ "transform": "rotate(0deg)" });
+        } else {
+            $(this).css({ "transform": "rotate(90deg)" });
+        };
+       
         $(".layui-layout-admin").toggleClass("showMenu");
         //渲染顶部窗口
         tab.tabMove();
