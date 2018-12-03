@@ -9,7 +9,7 @@ namespace Sundar.BLL
 {
     public class ModuleManagerBLL : BaseApp<Sys_Module>
     {
-        public string Get(string account)
+        public int Get(int account)
         {
             return Repository.FindSingle(u => u.Id == account).Id;
         }

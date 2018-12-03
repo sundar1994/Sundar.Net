@@ -30,12 +30,12 @@ namespace Sundar.BLL
         /// 按id批量删除
         /// </summary>
         /// <param name="ids"></param>
-        public void Delete(string[] ids)
+        public void Delete(int[] ids)
         {
             Repository.Delete(u => ids.Contains(u.Id));
         }
 
-        public T Get(string id)
+        public T Get(int id)
         {
             return Repository.FindSingle(u => u.Id == id);
         }
@@ -58,7 +58,7 @@ namespace Sundar.BLL
                 if (currentCascadeId <= objCascadeId) currentCascadeId = objCascadeId + 1;
             }
 
-            if (!string.IsNullOrEmpty(entity.ParentId))
+            if (entity.ParentId > 0)
             {
                 var parentOrg = UnitWork.FindSingle<U>(o => o.Id == entity.ParentId);
                 if (parentOrg != null)

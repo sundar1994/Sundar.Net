@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sundar.Repository", "Sundar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sundar.BLL", "Sundar.BLL\Sundar.BLL.csproj", "{996894A0-A71E-49B2-9050-1BF72A89893C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{6AAD2402-C8BA-46C4-9A38-F6E1F6DE61F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,7 +60,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{08A1D87F-BC9A-498C-82D2-5F4D7C03A685} = {6AAD2402-C8BA-46C4-9A38-F6E1F6DE61F8}
 		{405CD568-B09F-404B-9DB0-9CC6A5B8CFF0} = {CB50DB68-4EC9-4269-9A29-EC0B94922A60}
+		{0E25D59E-2936-43B0-9249-2CDE1C3E60D9} = {6AAD2402-C8BA-46C4-9A38-F6E1F6DE61F8}
 		{50E77079-6231-4A86-B68E-6796DC0B9029} = {CB50DB68-4EC9-4269-9A29-EC0B94922A60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

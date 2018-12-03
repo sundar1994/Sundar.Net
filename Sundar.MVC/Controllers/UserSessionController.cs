@@ -19,9 +19,10 @@ namespace Sundar.MVC.Controllers
             return string.Empty;
         }
 
-        public ActionResult Get(string account)
+        public ActionResult Get(int account)
         {
-            return Content(ModuleBLL.Get(account));
+            int a = ModuleBLL.Get(account);
+            return Content(a.ToString());
         }
     }
 }

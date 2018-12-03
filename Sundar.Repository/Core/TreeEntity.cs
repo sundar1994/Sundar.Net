@@ -13,9 +13,9 @@ namespace Sundar.BLL
     public abstract class TreeEntity : Entity
     {
         /// <summary>
-        /// 父节点名称
+        /// 父节点ID
         /// </summary>
-        public string ParentId { get; set; }
+        public int ParentId { get; set; }
         /// <summary>
         /// 父节点名称
         /// </summary>

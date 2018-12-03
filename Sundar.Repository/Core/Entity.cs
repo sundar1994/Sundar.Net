@@ -7,6 +7,6 @@ namespace Sundar.Repository.Domain
         /// <summary>
         /// 自增主键
         /// </summary>
-        public string Id { get; set; }
+        public int Id { get; set; }
     }
 }
