@@ -126,6 +126,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModuleManagerController.cs" />
     <Compile Include="Controllers\OrgManagerController.cs" />
     <Compile Include="Controllers\UserSessionController.cs" />
     <Compile Include="Global.asax.cs">
@@ -241,6 +242,11 @@
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
     <Content Include="Css\main.css" />
+    <Content Include="Css\metroStyle\img\line_conn.png" />
+    <Content Include="Css\metroStyle\img\loading.gif" />
+    <Content Include="Css\metroStyle\img\metro.gif" />
+    <Content Include="Css\metroStyle\img\metro.png" />
+    <Content Include="Css\metroStyle\metroStyle.css" />
     <Content Include="Css\treetable.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -251,6 +257,7 @@
     <Content Include="Js\Sys\index.js" />
     <Content Include="Js\Sys\leftNav.js" />
     <Content Include="Js\Sys\orgs.js" />
+    <Content Include="Js\UserJs\modules.js" />
     <Content Include="Js\utils.js" />
     <Content Include="Js\vue.js" />
     <Content Include="Js\ztree.js" />
@@ -281,6 +288,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\OrgManager\Index.cshtml" />
+    <Content Include="Views\ModuleManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sundar.BLL\Sundar.BLL.csproj">
