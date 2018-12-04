@@ -3,7 +3,7 @@
 namespace Sundar.Repository.Domain
 {
     [Serializable]
-    public class Sys_Module: Entity
+    public class Sys_Module : Entity
     {
         /// <summary>
         /// 

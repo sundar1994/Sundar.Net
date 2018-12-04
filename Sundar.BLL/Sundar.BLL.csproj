@@ -71,6 +71,7 @@
     <Compile Include="AutofacExt.cs" />
     <Compile Include="BaseApp.cs" />
     <Compile Include="ModuleManagerBLL.cs" />
+    <Compile Include="OrgManagerBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

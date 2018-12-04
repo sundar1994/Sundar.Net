@@ -1,11 +1,6 @@
 ﻿using Sundar.Repository.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Sundar.BLL
+namespace Sundar.Repository
 {
     /// <summary>
     /// 树状结构实体

@@ -56,6 +56,7 @@
     <Compile Include="Core\TreeEntity.cs" />
     <Compile Include="Domain\Sys_Module.cs" />
     <Compile Include="Domain\Sys_ModuleElement.cs" />
+    <Compile Include="Domain\Sys_Org.cs" />
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Interface\IUnitWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
