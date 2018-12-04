@@ -14,34 +14,12 @@ layui.define(["element","jquery"],function(exports){
 				closed : true,  
 				openTabNum : undefined,  //最大可打开窗口数量
 				tabFilter : "bodyTab",  //添加窗口的filter
-                url: undefined , //获取菜单json地址
-                defaultDate: [
-                    { // 为了该样式加的，后期后台有数据了删掉
-                        "Item":
-                            {
-                                "Id": "069475e3-c997-487a-9f29-e6a864c5c1d4",
-                                "CascadeId": ".0.2.", "Name": "流程中心", "Url": "/", "ParentId": null, "ParentName": "根节点", "IconName": "&#xe66a;", "Checked": false, "SortNo": 0, "Code": null, "Elements": []
-                            },
-                        "Children": [{
-                            "Item":
-                                {
-                                    "Id": "37bb9414-19a0-4223-9056-71f8c758a930", "CascadeId": ".0.2.3.", "Name": "已处理流程", "Url": "/flowinstances/disposed", "ParentId": "069475e3-c997-487a-9f29-e6a864c5c1d4", "ParentName": "流程中心", "IconName": "&#xe610;", "Checked": false, "SortNo": 0, "Code": "FlowInstanceDisposed",
-                                    "Elements": [{ "DomId": "btnDetail", "Name": "查看详情", "Attr": "", "Script": "", "Icon": "&#xe60a;", "Class": "layui-btn-normal", "Remark": "", "Sort": 0, "ModuleId": "37bb9414-19a0-4223-9056-71f8c758a930", "TypeName": "", "TypeId": "", "Id": "b3e23ebc-0ff2-41b3-bff0-fd5e93f6828a" }]
-                                }
-                        }]
-                    },
-                    { 
-                        "Item": {
-                            "Id": "4abafc83-c8f5-452f-9882-e113a86e7a3e",
-                            "CascadeId": ".0.2.2.", "Name": "待处理流程", "Url": "/flowinstances/wait", "ParentId": "069475e3-c997-487a-9f29-e6a864c5c1d4", "ParentName": "流程中心", "IconName": "&#xe641;", "Checked": false, "SortNo": 0, "Code": "FlowInstanceWait", "Elements": [{ "DomId": "btnVerification", "Name": "处理", "Attr": "", "Script": "verificationForm()", "Icon": "&#xe610;", "Class": "layui-btn-normal", "Remark": "", "Sort": 5, "ModuleId": "4abafc83-c8f5-452f-9882-e113a86e7a3e", "TypeName": null, "TypeId": null, "Id": "79dcd3eb-3aaf-4e08-83c9-713d8ff446fe" }, { "DomId": "btnDetail", "Name": "进度详情", "Attr": "", "Script": "", "Icon": "&#xe60a;", "Class": "layui-btn-normal", "Remark": "", "Sort": 4, "ModuleId": "4abafc83-c8f5-452f-9882-e113a86e7a3e", "TypeName": null, "TypeId": null, "Id": "826b12b3-e916-446d-a2fa-329cfd13c831" }]
-                        },
-                        "Children": []
-                    }]
+                url: undefined  //获取菜单json地址
 			}
 		};
 
 	//获取二级菜单数据用的后台获取的数据
-	/*Tab.prototype.render = function() {
+	Tab.prototype.render = function() {
 		var url = this.tabConfig.url;
 		$.get(url,function(data){
 			//显示左侧菜单
@@ -54,23 +32,7 @@ layui.define(["element","jquery"],function(exports){
 				})
 			}
 		})
-	}*/
-
-    /*后期删，模拟数据*/
-    Tab.prototype.render = function () {
-        var defaultDate = this.tabConfig.defaultDate;
-        
-            if ($(".navBar").html() == '') {
-                var _this = this;
-                $(".navBar").html(navBar(defaultDate)).height($(window).height() - 245);
-                element.init();  //初始化页面元素
-                $(window).resize(function () {
-                    $(".navBar").height($(window).height() - 245);
-                })
-            }
-       
-    }
-
+	}
 
 	//参数设置
 	Tab.prototype.set = function(option) {

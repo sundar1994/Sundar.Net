@@ -150,50 +150,6 @@ layui.config({
     //渲染左侧菜单
     tab.render();
 
-    //锁屏
-    function lockPage() {
-        layer.open({
-            title: false,
-            type: 1,
-            content: '	<div class="admin-header-lock" id="lock-box">' +
-                '<div class="admin-header-lock-img"><img src="/images/face.jpg"/></div>' +
-                '<div class="admin-header-lock-name" id="lockUserName">admin</div>' +
-                '<div class="input_btn">' +
-                '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />' +
-                '<button class="layui-btn" id="unlock">解锁</button>' +
-                '</div>' +
-                '<p>请输入“123456”，否则不会解锁成功哦！！！</p>' +
-                '</div>',
-            closeBtn: 0,
-            shade: 0.9
-        })
-        $(".admin-header-lock-input").focus();
-    }
-    $(".lockcms").on("click", function () {
-        window.sessionStorage.setItem("lockcms", true);
-        lockPage();
-    })
-    // 判断是否显示锁屏
-    if (window.sessionStorage.getItem("lockcms") == "true") {
-        lockPage();
-    }
-    // 解锁
-    $("body").on("click", "#unlock", function () {
-        if ($(this).siblings(".admin-header-lock-input").val() == '') {
-            layer.msg("请输入解锁密码！");
-            $(this).siblings(".admin-header-lock-input").focus();
-        } else {
-            if ($(this).siblings(".admin-header-lock-input").val() == "123456") {
-                window.sessionStorage.setItem("lockcms", false);
-                $(this).siblings(".admin-header-lock-input").val('');
-                layer.closeAll("page");
-            } else {
-                layer.msg("密码错误，请重新输入！");
-                $(this).siblings(".admin-header-lock-input").val('').focus();
-            }
-        }
-    });
-
     //手机设备的简单适配
     var treeMobile = $('.site-tree-mobile'),
         shadeMobile = $('.site-mobile-shade')
@@ -214,44 +170,6 @@ layui.config({
             $('body').removeClass('site-mobile');  //移动端点击菜单关闭菜单层
         }
         $(this).parent("li").siblings().removeClass("layui-nav-itemed");
-    })
-
-    //公告层
-    function showNotice() {
-        layer.open({
-            type: 1,
-            title: "系统公告",
-            closeBtn: false,
-            area: '310px',
-            shade: 0.8,
-            id: 'LAY_layuipro',
-            btn: ['火速围观'],
-            moveType: 1,
-            content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;">' +
-                '<p>浴火重生，OpenAuth.Net 4.0正式上线，界面采用贤心最新版layui及马哥的layuicms</p>' +
-                '<p>喜欢的，快快star吧！</p></div>',
-            success: function (layero) {
-                var btn = layero.find('.layui-layer-btn');
-                btn.css('text-align', 'center');
-                btn.on("click", function () {
-                    window.sessionStorage.setItem("showNotice", "true");
-                })
-                if ($(window).width() > 432) {  //如果页面宽度不足以显示顶部“系统公告”按钮，则不提示
-                    btn.on("click", function () {
-                        layer.tips('系统公告躲在了这里', '#showNotice', {
-                            tips: 3
-                        });
-                    })
-                }
-            }
-        });
-    }
-    //判断是否处于锁屏状态(如果关闭以后则未关闭浏览器之前不再显示)
-    if (window.sessionStorage.getItem("lockcms") != "true" && window.sessionStorage.getItem("showNotice") != "true") {
-        showNotice();
-    }
-    $(".showNotice").on("click", function () {
-        showNotice();
     })
 
     //刷新后还原打开的窗口
