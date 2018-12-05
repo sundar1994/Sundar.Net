@@ -1,4 +1,5 @@
 ﻿using Sundar.BLL;
+using Sundar.BLL.Response;
 using Sundar.Common;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,41 @@ namespace Sundar.MVC.Controllers
             return JsonHelper.Instance.Serialize(moduleTree);
         }
 
-        public ActionResult Get(int account)
+        /// <summary>
+        /// datatable结构的模块列表
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public string GetModules(string pId)
+        {
+            string cascadeId = ".0.";
+            if (!string.IsNullOrEmpty(pId))
+            {
+                //var obj = user.Modules.SingleOrDefault(u => u.Id == pId);
+                //if (obj == null)
+                //    throw new Exception("未能找到指定对象信息");
+                //cascadeId = obj.CascadeId;
+            }
+
+            var query = ModuleBLL.LoadForUser("").Where(u => u.CascadeId.Contains(cascadeId));
+
+            return JsonHelper.Instance.Serialize(new TableData
+            {
+                data = query.ToList(),
+                count = query.Count(),
+            });
+        }
+
+        /// <summary>
+        /// 获取用户可访问的模块列表
+        /// </summary>
+        public string QueryModuleList()
+        {
+            var orgs = ModuleBLL.LoadForUser("").MapToList<ModuleView>();
+            return JsonHelper.Instance.Serialize(orgs);
+        }
+
+        public ActionResult Test(int account)
         {
             int a = ModuleBLL.Get(account);
             return Content(a.ToString());

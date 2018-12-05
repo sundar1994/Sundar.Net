@@ -10,8 +10,6 @@ using Sundar.Repository.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-//using SundarNetDBContext;
-//using SundarNetDBContext;
 
 namespace Sundar.Repository
 {
@@ -31,6 +29,7 @@ namespace Sundar.Repository
 
         public System.Data.Entity.DbSet<Sys_Module> Sys_Module { get; set; }
         public System.Data.Entity.DbSet<Sys_ModuleElement> Sys_ModuleElement { get; set; }
+        public System.Data.Entity.DbSet<Sys_Org> Sys_Org { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

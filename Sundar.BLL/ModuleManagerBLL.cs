@@ -1,9 +1,6 @@
 ﻿using Sundar.Repository.Domain;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sundar.BLL
 {
@@ -26,6 +23,18 @@ namespace Sundar.BLL
             // var roleIds = RevelanceManagerApp.Get(Define.USERROLE, true, userId);
             var moduleIds = UnitWork.Find<Sys_Module>(u => u.Id > 0).ToList();
             return moduleIds;
+        }
+
+        /// <summary>
+        /// 根据某用户ID获取可访问某模块的菜单项
+        /// </summary>
+        /// <param name="moduleId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public IEnumerable<Sys_ModuleElement> LoadMenusForUser(int moduleId, string userId)
+        {
+            // var elementIds = RevelanceManagerApp.Get(Define.USERELEMENT, true, userId);
+            return UnitWork.Find<Sys_ModuleElement>(u => u.Id > 0 && u.ModuleId == moduleId);
         }
         #endregion
     }

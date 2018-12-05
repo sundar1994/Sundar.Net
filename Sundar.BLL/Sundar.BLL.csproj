@@ -68,12 +68,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthoriseService.cs" />
+    <Compile Include="AuthorizeApp.cs" />
     <Compile Include="AutofacExt.cs" />
     <Compile Include="BaseApp.cs" />
     <Compile Include="ModuleManagerBLL.cs" />
+    <Compile Include="OrgManagerBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response\ModuleView.cs" />
+    <Compile Include="Response\TableData.cs" />
+    <Compile Include="Response\UserWithAccessedCtrls.cs" />
+    <Compile Include="SSO\AuthUtil.cs" />
+    <Compile Include="SystemAuthService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sundar.Common\Sundar.Common.csproj">
+      <Project>{9217c308-7501-4438-b818-ff9c9cd2de33}</Project>
+      <Name>Sundar.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sundar.Repository\Sundar.Repository.csproj">
       <Project>{ad429fe5-f573-4911-add5-d30947db9d2e}</Project>
       <Name>Sundar.Repository</Name>
