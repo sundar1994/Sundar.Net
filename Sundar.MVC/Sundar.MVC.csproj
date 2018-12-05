@@ -137,6 +137,9 @@
   <ItemGroup>
     <Content Include="Content\layui\css\layui.css" />
     <Content Include="Content\layui\css\layui.mobile.css" />
+    <Content Include="Content\layui\css\metroStyle\img\line_conn.png" />
+    <Content Include="Content\layui\css\metroStyle\img\metro.png" />
+    <Content Include="Content\layui\css\metroStyle\metroStyle.css" />
     <Content Include="Content\layui\css\modules\code.css" />
     <Content Include="Content\layui\css\modules\laydate\default\font.css" />
     <Content Include="Content\layui\css\modules\laydate\default\laydate.css" />

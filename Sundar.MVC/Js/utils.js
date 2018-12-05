@@ -38,7 +38,7 @@ layui.define("jquery", function (exports) {
                        function () {
                            var element = this;
                            sb += ("<button " + " data-type='" + element.DomId +
-                               "' " + " class='layui-btn layui-btn-small " + element.Class +
+                               "' " + " class='layui-btn layui-btn-primary layui-btn-sm " + element.Class +
                                "' " + element.Attr + ">");
 
                            if (element.Icon != null && element.Icon != '') {
