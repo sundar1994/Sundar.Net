@@ -144,6 +144,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\SSO\Controllers\CheckController.cs" />
     <Compile Include="Areas\SSO\SSOAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,6 +168,7 @@
     <Folder Include="Areas\SSO\Models\" />
     <Folder Include="Areas\SSO\Views\Check\" />
     <Folder Include="Areas\SSO\Views\Shared\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\SSO\Views\web.config" />
