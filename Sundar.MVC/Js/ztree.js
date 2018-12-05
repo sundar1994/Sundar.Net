@@ -472,4 +472,4 @@ layui.define("jquery", function (exports) {
 
 
   exports('ztree');
-}).addcss('../Css/metroStyle/metroStyle.css', 'ztreecss');
+}).addcss('../css/metroStyle/metroStyle.css', 'ztreecss');
