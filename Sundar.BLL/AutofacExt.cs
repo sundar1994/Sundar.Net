@@ -3,7 +3,7 @@
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
-//using Autofac.Integration.WebApi;
+using Autofac.Integration.WebApi;
 using Sundar.Repository;
 using Sundar.Repository.Interface;
 using IContainer = Autofac.IContainer;
@@ -29,6 +29,9 @@ namespace Sundar.BLL
 
             // 注册controller，使用属性注入
             builder.RegisterControllers(Assembly.GetCallingAssembly()).PropertiesAutowired();
+
+            //注册所有的ApiControllers，使用属性注入
+            builder.RegisterApiControllers(Assembly.GetCallingAssembly()).PropertiesAutowired();
 
             builder.RegisterModelBinders(Assembly.GetCallingAssembly());
             builder.RegisterModelBinderProvider();

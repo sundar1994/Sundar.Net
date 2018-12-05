@@ -142,8 +142,9 @@
     <Compile Include="App_Start\Swagger\CachingSwaggerProvider.cs" />
     <Compile Include="App_Start\Swagger\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\SSO\Controllers\CheckController.cs" />
+    <Compile Include="Areas\SSO\SSOAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,17 +162,23 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\SSO\Models\" />
+    <Folder Include="Areas\SSO\Views\Check\" />
+    <Folder Include="Areas\SSO\Views\Shared\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\SSO\Views\web.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sundar.BLL\Sundar.BLL.csproj">
+      <Project>{996894A0-A71E-49B2-9050-1BF72A89893C}</Project>
+      <Name>Sundar.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sundar.Common\Sundar.Common.csproj">
       <Project>{9217c308-7501-4438-b818-ff9c9cd2de33}</Project>
       <Name>Sundar.Common</Name>
