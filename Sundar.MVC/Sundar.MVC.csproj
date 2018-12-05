@@ -126,6 +126,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ModuleManagerController.cs" />
     <Compile Include="Controllers\OrgManagerController.cs" />
     <Compile Include="Controllers\UserSessionController.cs" />
@@ -289,6 +290,7 @@
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\OrgManager\Index.cshtml" />
     <Content Include="Views\ModuleManager\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sundar.BLL\Sundar.BLL.csproj">

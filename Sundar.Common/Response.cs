@@ -25,4 +25,16 @@ namespace Sundar.Common
             Message = "操作成功";
         }
     }
+
+    /// <summary>
+    /// WEBAPI通用返回泛型基类
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class Response<T> : Response
+    {
+        /// <summary>
+        /// 回传的结果
+        /// </summary>
+        public T Result { get; set; }
+    }
 }

@@ -1,19 +1,66 @@
 ﻿using Sundar.BLL.Response;
+using Sundar.Common;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Sundar.BLL.SSO
 {
     public class AuthUtil
     {
+        static HttpHelper _helper = new HttpHelper(ConfigurationManager.AppSettings["SSOPassport"]);
+
         public AuthorizeApp AuthorizeApp { get; set; }
 
         public AuthUtil()
         {
             AuthorizeApp= AutofacExt.GetFromFac<AuthorizeApp>();
+        }
+
+        private static string GetToken()
+        {
+            string token = HttpContext.Current.Request.QueryString["Token"];
+            if (!String.IsNullOrEmpty(token)) return token;
+
+            var cookie = HttpContext.Current.Request.Cookies["Token"];
+            return cookie == null ? String.Empty : cookie.Value;
+        }
+
+        public static bool CheckLogin(string token, string remark = "")
+        {
+            if (String.IsNullOrEmpty(token) || String.IsNullOrEmpty(GetToken()))
+                return false;
+
+            var requestUri = String.Format("/api/Check/GetStatus?token={0}&requestid={1}", token, remark);
+
+            try
+            {
+                var value = _helper.Get(null, requestUri);
+                var result = JsonHelper.Instance.Deserialize<Response<bool>>(value);
+                if (result.Code == 200)
+                {
+                    return result.Result;
+                }
+                throw new Exception(result.Message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 检查用户登录状态
+        /// <para>通过URL中的Token参数或Cookie中的Token</para>
+        /// </summary>
+        /// <param name="remark">备注信息</param>
+        public static bool CheckLogin(string remark = "")
+        {
+            return CheckLogin(GetToken(), remark);
         }
 
         /// <summary>
@@ -66,6 +113,58 @@ namespace Sundar.BLL.SSO
 
             return result;
 
+        }
+
+        /// <summary>
+        /// 登录接口
+        /// </summary>
+        /// <param name="appKey">应用程序key.</param>
+        /// <param name="username">用户名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns>System.String.</returns>
+        public static LoginResult Login(string appKey, string username, string pwd)
+        {
+            var requestUri = "/api/Check/Login";
+
+            try
+            {
+                var value = _helper.Post(new
+                {
+                    AppKey = appKey,
+                    Account = username,
+                    Password = pwd
+                }, requestUri);
+
+                var result = JsonHelper.Instance.Deserialize<LoginResult>(value);
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 注销
+        /// </summary>
+        public static bool Logout()
+        {
+            var token = GetToken();
+            if (String.IsNullOrEmpty(token)) return true;
+
+            var requestUri = String.Format("/api/Check/Logout?token={0}&requestid={1}", token, "");
+
+            try
+            {
+                var value = _helper.Post(null, requestUri);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

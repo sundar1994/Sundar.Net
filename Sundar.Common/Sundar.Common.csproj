@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AutoMapperExt.cs" />
     <Compile Include="GenericHelpers.cs" />
+    <Compile Include="HttpHelper.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="StringHelper.cs" />
