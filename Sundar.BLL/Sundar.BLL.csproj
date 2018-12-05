@@ -80,8 +80,13 @@
     <Compile Include="Response\ModuleView.cs" />
     <Compile Include="Response\TableData.cs" />
     <Compile Include="Response\UserWithAccessedCtrls.cs" />
+    <Compile Include="SSO\AppInfo.cs" />
+    <Compile Include="SSO\AppInfoService.cs" />
     <Compile Include="SSO\AuthUtil.cs" />
     <Compile Include="SSO\LoginResult.cs" />
+    <Compile Include="SSO\PassportLoginRequest.cs" />
+    <Compile Include="SSO\SSOAuthUtil.cs" />
+    <Compile Include="SSO\UserAuthSession.cs" />
     <Compile Include="SystemAuthService.cs" />
   </ItemGroup>
   <ItemGroup>
