@@ -45,5 +45,10 @@ namespace Sundar.Repository.Domain
         /// 当前状态
         /// </summary>
         public int Status { get; set; }
+        /// <summary>
+        /// 模块标识
+        /// </summary>
+        /// <value>The code.</value>
+        public string Code { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace Sundar.BLL.Response
         /// ID
         /// </summary>
         /// <returns></returns>
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
 	    /// 节点语义ID
