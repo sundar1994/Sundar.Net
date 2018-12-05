@@ -2,6 +2,7 @@
 using Sundar.BLL.Response;
 using Sundar.BLL.SSO;
 using Sundar.Common;
+using Sundar.Repository.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,5 +70,120 @@ namespace Sundar.MVC.Controllers
             };
             return JsonHelper.Instance.Serialize(data);
         }
+
+        #region 添加编辑模块
+        //添加模块
+        [HttpPost]
+        [ValidateInput(false)]
+        public string Add(Sys_Module model)
+        {
+            try
+            {
+                ModuleBLL.Add(model);
+            }
+            catch (Exception ex)
+            {
+                Result.Code = 500;
+                Result.Message = ex.Message;
+            }
+            return JsonHelper.Instance.Serialize(Result);
+        }
+
+        //修改模块
+        [HttpPost]
+        [ValidateInput(false)]
+        public string Update(Sys_Module model)
+        {
+            try
+            {
+                ModuleBLL.Update(model);
+            }
+            catch (Exception ex)
+            {
+                Result.Code = 500;
+                Result.Message = ex.Message;
+            }
+            return JsonHelper.Instance.Serialize(Result);
+        }
+
+        /// <summary>
+        /// 删除模块
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public string Delete(int[] ids)
+        {
+            try
+            {
+                ModuleBLL.Delete(ids);
+            }
+            catch (Exception e)
+            {
+                Result.Code = 500;
+                Result.Message = e.Message;
+            }
+
+            return JsonHelper.Instance.Serialize(Result);
+        }
+        #endregion
+
+        #region 添加编辑菜单
+        //添加菜单
+        [HttpPost]
+        [ValidateInput(false)]
+        public string AddMenu(Sys_ModuleElement model)
+        {
+            try
+            {
+                ModuleBLL.AddMenu(model);
+            }
+            catch (Exception ex)
+            {
+                Result.Code = -1;
+                Result.Message = ex.Message;
+            }
+            return JsonHelper.Instance.Serialize(Result);
+        }
+
+        //更新菜单
+        [HttpPost]
+        [ValidateInput(false)]
+        public string UpdateMenu(Sys_ModuleElement model)
+        {
+            try
+            {
+                ModuleBLL.UpdateMenu(model);
+            }
+            catch (Exception ex)
+            {
+                Result.Code = 500;
+                Result.Message = ex.Message;
+            }
+            return JsonHelper.Instance.Serialize(Result);
+        }
+
+
+        /// <summary>
+        /// 删除菜单
+        /// </summary>
+        [HttpPost]
+        public string DelMenu(params int[] ids)
+        {
+            try
+            {
+                ModuleBLL.DelMenu(ids);
+            }
+            catch (Exception e)
+            {
+                Result.Code = 500;
+                Result.Message = e.Message;
+            }
+
+            return JsonHelper.Instance.Serialize(Result);
+        }
+        #endregion
+
+
     }
 }

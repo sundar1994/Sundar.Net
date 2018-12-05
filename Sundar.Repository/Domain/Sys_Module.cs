@@ -3,16 +3,17 @@
 namespace Sundar.Repository.Domain
 {
     [Serializable]
-    public class Sys_Module : Entity
+    public class Sys_Module : TreeEntity
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public string CascadeId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Name { get; set; }
+        public Sys_Module()
+        {
+            this.Url = string.Empty;
+            this.IconName = string.Empty;
+            this.Status = 0;
+            this.SortNo = 0;
+            this.Code = string.Empty;
+        }
+
         /// <summary>
         /// 主页面URL
         /// </summary>
@@ -29,14 +30,6 @@ namespace Sundar.Repository.Domain
         /// 节点图标文件名称
         /// </summary>
         public string IconName { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int ParentId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string ParentName { get; set; }
         /// <summary>
         /// 
         /// </summary>
