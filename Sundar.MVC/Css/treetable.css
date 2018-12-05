@@ -1,6 +1,10 @@
 .layui-elem-quote {
     margin-bottom: 2px;
-    padding: 10px;
+    padding: 6px;
+    background: #f8f8f8;
+    text-align:right;
+    padding-right:20px;
+    border-left:none!important;
 }
 
 .layui-table-view {
@@ -9,4 +13,12 @@
 
 ul.ztree {
    margin-top: 0!important; 
+   background:white;
 }
+#main-content {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 0;
+}
+.layui-table-view, .layui-table-box{background:white;}
