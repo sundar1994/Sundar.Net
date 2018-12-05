@@ -56,11 +56,5 @@ namespace Sundar.MVC.Controllers
             var orgs = ModuleBLL.LoadForUser("").MapToList<ModuleView>();
             return JsonHelper.Instance.Serialize(orgs);
         }
-
-        public ActionResult Test(int account)
-        {
-            int a = ModuleBLL.Get(account);
-            return Content(a.ToString());
-        }
     }
 }

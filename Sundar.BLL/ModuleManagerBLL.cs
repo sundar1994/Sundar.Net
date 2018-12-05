@@ -6,9 +6,25 @@ namespace Sundar.BLL
 {
     public class ModuleManagerBLL : BaseApp<Sys_Module>
     {
-        public int Get(int account)
+        /// <summary>
+        /// 新增模块
+        /// </summary>
+        /// <param name="model"></param>
+
+        public void Add(Sys_Module model)
         {
-            return Repository.FindSingle(u => u.Id == account).Id;
+            ChangeModuleCascade(model);
+            Repository.Add(model);
+        }
+
+        /// <summary>
+        /// 更新模块
+        /// </summary>
+        /// <param name="model"></param>
+        public void Update(Sys_Module model)
+        {
+            ChangeModuleCascade(model);
+            Repository.Update(u => u.Id, model);
         }
 
         #region 用户/角色分配模块
@@ -35,6 +51,39 @@ namespace Sundar.BLL
         {
             // var elementIds = RevelanceManagerApp.Get(Define.USERELEMENT, true, userId);
             return UnitWork.Find<Sys_ModuleElement>(u => u.Id > 0 && u.ModuleId == moduleId);
+        }
+
+
+        #endregion
+
+        #region 菜单操作
+        /// <summary>
+        /// 删除指定的菜单
+        /// </summary>
+        /// <param name="ids"></param>
+        public void DelMenu(int[] ids)
+        {
+            UnitWork.Delete<Sys_ModuleElement>(u => ids.Contains(u.Id));
+        }
+
+        /// <summary>
+        /// 新增菜单
+        /// </summary>
+        /// <param name="model"></param>
+        public void AddMenu(Sys_ModuleElement model)
+        {
+            UnitWork.Add(model);
+            UnitWork.Save();
+        }
+
+        /// <summary>
+        /// 更新菜单
+        /// </summary>
+        /// <param name="model"></param>
+        public void UpdateMenu(Sys_ModuleElement model)
+        {
+            UnitWork.Update<Sys_ModuleElement>(u => u.Id, model);
+            UnitWork.Save();
         }
         #endregion
     }

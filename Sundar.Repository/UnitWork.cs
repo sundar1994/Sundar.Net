@@ -49,8 +49,7 @@ namespace Sundar.Repository
             if (string.IsNullOrEmpty(orderby))
                 orderby = "Id descending";
 
-            // return Filter(exp).OrderBy(orderby).Skip(pagesize * (pageindex - 1)).Take(pagesize);
-            return null;
+            return Filter(exp).OrderBy(orderby).Skip(pagesize * (pageindex - 1)).Take(pagesize);
         }
 
         /// <summary>

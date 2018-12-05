@@ -57,6 +57,7 @@
     <Compile Include="Cache\EnyimMemcachedContext.cs" />
     <Compile Include="Cache\ICacheContext.cs" />
     <Compile Include="Cache\ObjCacheProvider.cs" />
+    <Compile Include="DynamicQueryable.cs" />
     <Compile Include="GenericHelpers.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="JsonHelper.cs" />

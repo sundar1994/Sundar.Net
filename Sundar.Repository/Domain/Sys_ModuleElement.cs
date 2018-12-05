@@ -5,6 +5,20 @@ namespace Sundar.Repository.Domain
     [Serializable]
     public class Sys_ModuleElement: Entity
     {
+        public Sys_ModuleElement()
+        {
+            this.DomId = string.Empty;
+            this.Name = string.Empty;
+            this.Attr = string.Empty;
+            this.Script = string.Empty;
+            this.Icon = string.Empty;
+            this.ClassName = string.Empty;
+            this.Remark = string.Empty;
+            this.Sort = 0;
+            this.ModuleId = 0;
+            this.Status = 1;
+        }
+
         /// <summary>
         /// DOM ID
         /// </summary>
