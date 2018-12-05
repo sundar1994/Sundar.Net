@@ -21,4 +21,10 @@ ul.ztree {
     box-sizing: border-box;
     padding-bottom: 0;
 }
-.layui-table-view, .layui-table-box{background:white;}
+.my-table .layui-table-view, .layui-table-box {
+    background: white;
+}
+    .layui-table-view .layui-table[lay-size="sm"] .layui-table-cell {
+        height: 24px;
+        line-height: 24px;
+    }
