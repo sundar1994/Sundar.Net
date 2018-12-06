@@ -1,0 +1,88 @@
+﻿using System;
+using Sundar.Common;
+using Sundar.Repository.Domain;
+
+namespace Sundar.BLL.Response
+{
+    public class UserView
+    {
+        public UserView()
+        {
+            Organizations = string.Empty;
+            OrganizationIds = string.Empty;
+            CreateUser = string.Empty;
+        }
+
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        /// <returns></returns>
+        public int Id { get; set; }
+
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public string Account { get; set; }
+
+
+        /// <summary>
+        /// 组织名称
+        /// </summary>
+        /// <returns></returns>
+        public string Name { get; set; }
+
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public int Sex { get; set; }
+
+
+        /// <summary>
+        /// 当前状态
+        /// </summary>
+        /// <returns></returns>
+        public int Status { get; set; }
+
+
+        /// <summary>
+        /// 组织类型
+        /// </summary>
+        /// <returns></returns>
+        public int Type { get; set; }
+
+
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        /// <returns></returns>
+        public DateTime CreateTime { get; set; }
+
+
+        /// <summary>
+        /// 创建人名字
+        /// </summary>
+        /// <value>The create user.</value>
+        public string CreateUser { get; set; }
+
+        /// <summary>
+        /// 所属组织名称，多个可用，分隔
+        /// </summary>
+        /// <value>The organizations.</value>
+        public string Organizations { get; set; }
+
+        public string OrganizationIds { get; set; }
+
+        public static implicit operator UserView(Sys_User user)
+        {
+            return user.MapTo<UserView>();
+        }
+
+        public static implicit operator Sys_User(UserView view)
+        {
+            return view.MapTo<Sys_User>();
+        }
+    }
+}

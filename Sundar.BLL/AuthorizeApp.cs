@@ -1,11 +1,14 @@
-﻿using Sundar.BLL.Response;
+﻿using System.Linq;
 using Sundar.Common;
+using Sundar.BLL.Response;
 using Sundar.Repository.Domain;
 using Sundar.Repository.Interface;
-using System.Linq;
 
 namespace Sundar.BLL
 {
+    /// <summary>
+    /// 加载用户所有可访问的资源/机构/模块
+    /// </summary>
     public class AuthorizeApp
     {
         public SystemAuthService AuthService { get; set; }

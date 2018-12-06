@@ -1,54 +1,40 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
-<style>
-    .login{background:rgb(45,58,75);min-height:100vh;padding-top:150px;box-sizing:border-box;}
-        .login .inner {
-            width: 520px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.1);
-            padding: 35px 35px 15px 35px;
-            color:white;
-        }
-    h4 {
-        font-size: 26px;
-        text-align:center;
-        padding-bottom:30px;
-    }
-    .layui-input-block{margin-left:50px;}
-    .layui-form-label{width:20px;}
-    .layui-form-item {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        padding:5px 0;
-    }
-        .layui-form-item.btn_out{padding:0;margin-bottom:40px;}
-        .layui-form-item input {
-            background: none !important;
-            border: none !important;
-            color: white;
-        }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录--Sundar.Net</title>
+    <link rel="stylesheet" href="~/Content/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="~/Css/login.css" media="all" />
+</head>
+<body class="main" style="background-position: -280.8px 0px;">
+    <form class="layui-form login" action="">
+        <div class="inner">
+            <h4>登录</h4>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon">&#xe66f;</i></label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" 
+                           autocomplete="off" class="layui-input" value="System">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon">&#xe673;</i></label>
+                <div class="layui-input-block">
+                    <input type="password" name="password" id="password" value="123456"
+                           required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item btn_out">
+                <button class="layui-btn layui-btn-fluid layui-btn-normal loginbtn" lay-submit  lay-filter="login">登录</button>
+            </div>
+        </div>
+    </form>
 
-</style>
-<form class="layui-form login" action="">
-    <div class="inner">
-        <h4>登录</h4>
-        <div class="layui-form-item">
-            <label class="layui-form-label"><i class="layui-icon">&#xe66f;</i></label>
-            <div class="layui-input-block">
-                <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label"><i class="layui-icon">&#xe673;</i></label>
-            <div class="layui-input-block">
-                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item btn_out">
-            <button class="layui-btn layui-btn-fluid layui-btn-normal">登录</button>
-        </div>
-    </div>
-</form>
+    <script type="text/javascript" src="~/Content/layui/layui.js"></script>
+    <script type="text/javascript" src="~/Js/UserJs/login.js"></script>
+</body>
+</html>
+

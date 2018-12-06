@@ -246,6 +246,7 @@
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
+    <Content Include="Css\login.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\metroStyle\img\line_conn.png" />
     <Content Include="Css\metroStyle\img\loading.gif" />
@@ -262,6 +263,7 @@
     <Content Include="Js\Sys\index.js" />
     <Content Include="Js\Sys\leftNav.js" />
     <Content Include="Js\Sys\orgs.js" />
+    <Content Include="Js\UserJs\login.js" />
     <Content Include="Js\UserJs\modules.js" />
     <Content Include="Js\UserJs\roles.js" />
     <Content Include="Js\utils.js" />

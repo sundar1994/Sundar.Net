@@ -1,0 +1,46 @@
+﻿.login {
+    background: rgb(45,58,75);
+    min-height: 100vh;
+    padding-top: 150px;
+    box-sizing: border-box;
+}
+
+    .login .inner {
+        width: 520px;
+        margin: 0 auto;
+        background: rgba(255,255,255,0.1);
+        padding: 35px 35px 15px 35px;
+        color: white;
+    }
+
+h4 {
+    font-size: 26px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.layui-input-block {
+    margin-left: 50px;
+}
+
+.layui-form-label {
+    width: 20px;
+}
+
+.layui-form-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+    .layui-form-item.btn_out {
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .layui-form-item input {
+        background: none !important;
+        border: none !important;
+        color: white;
+    }

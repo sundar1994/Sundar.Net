@@ -13,11 +13,10 @@ namespace Sundar.BLL
     public static class AutofacExt
     {
         private static IContainer _container;
-
         public static void InitAutofac()
         {
             var builder = new ContainerBuilder();
-
+            var config = GlobalConfiguration.Configuration;
             //注册数据库基础操作
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).PropertiesAutowired();
 
@@ -42,6 +41,8 @@ namespace Sundar.BLL
             _container = builder.Build();
             //Set the MVC DependencyResolver
             DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));
+            //Set the WebApi DependencyResolver
+            config.DependencyResolver = new AutofacWebApiDependencyResolver((IContainer)_container);
         }
 
         /// <summary>
