@@ -70,7 +70,6 @@ namespace Sundar.WebApi.Areas.SSO.Controllers
             }
 
             return result;
-
         }
 
         /// <summary>
