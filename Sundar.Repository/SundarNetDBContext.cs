@@ -30,6 +30,7 @@ namespace Sundar.Repository
         public System.Data.Entity.DbSet<Sys_Module> Sys_Module { get; set; }
         public System.Data.Entity.DbSet<Sys_ModuleElement> Sys_ModuleElement { get; set; }
         public System.Data.Entity.DbSet<Sys_Org> Sys_Org { get; set; }
+        public System.Data.Entity.DbSet<Sys_Role> Sys_Role { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

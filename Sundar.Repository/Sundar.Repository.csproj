@@ -58,6 +58,7 @@
     <Compile Include="Domain\Sys_Module.cs" />
     <Compile Include="Domain\Sys_ModuleElement.cs" />
     <Compile Include="Domain\Sys_Org.cs" />
+    <Compile Include="Domain\Sys_Role.cs" />
     <Compile Include="Domain\Sys_User.cs" />
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Interface\IUnitWork.cs" />

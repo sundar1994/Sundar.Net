@@ -69,22 +69,20 @@ namespace Sundar.BLL.SSO
         /// </summary>
         /// <param name="remark">The remark.</param>
         /// <returns>LoginUserVM.</returns>
-        public UserWithAccessedCtrls GetCurrentUser(string remark = "")
+        public static UserWithAccessedCtrls GetCurrentUser(string remark = "")
         {
 
-           // var requestUri = String.Format("/api/Check/GetUser?token={0}&requestid={1}", GetToken(), remark);
+            var requestUri = String.Format("/api/Check/GetUser?token={0}&requestid={1}", GetToken(), remark);
 
             try
             {
-                // var value = _helper.Get(null, requestUri);
-                // var result = JsonHelper.Instance.Deserialize<Response<UserWithAccessedCtrls>>(value);
-                UserWithAccessedCtrls result = AuthorizeApp.GetAccessedControls("System");
-                return result;
-                //if (result.Code == 200)
-                //{
-                //    return result.Result;
-                //}
-                //throw new Exception(result.Message);
+                var value = _helper.Get(null, requestUri);
+                var result = JsonHelper.Instance.Deserialize<Response<UserWithAccessedCtrls>>(value);
+                if (result.Code == 200)
+                {
+                    return result.Result;
+                }
+                throw new Exception(result.Message);
             }
             catch (Exception ex)
             {

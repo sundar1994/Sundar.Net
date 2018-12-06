@@ -43,7 +43,7 @@ namespace Sundar.MVC.Controllers
         /// <returns>System.String.</returns>
         public string LoadAuthorizedMenus(string modulecode)
         {
-            var user = new AuthUtil().GetCurrentUser();
+            var user = AuthUtil.GetCurrentUser();
             var module = user.Modules.First(u => u.Code == modulecode);
             if (module != null)
             {
@@ -59,7 +59,7 @@ namespace Sundar.MVC.Controllers
         /// <returns>System.String.</returns>
         public string LoadMenus(int moduleId)
         {
-            var user =new AuthUtil().GetCurrentUser();
+            var user = AuthUtil.GetCurrentUser();
 
             var module = user.Modules.Single(u => u.Id == moduleId);
 
