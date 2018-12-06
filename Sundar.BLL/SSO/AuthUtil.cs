@@ -14,13 +14,6 @@ namespace Sundar.BLL.SSO
     {
         static HttpHelper _helper = new HttpHelper(ConfigurationManager.AppSettings["SSOPassport"]);
 
-        public AuthorizeApp AuthorizeApp { get; set; }
-
-        public AuthUtil()
-        {
-            AuthorizeApp= AutofacExt.GetFromFac<AuthorizeApp>();
-        }
-
         private static string GetToken()
         {
             string token = HttpContext.Current.Request.QueryString["Token"];
@@ -78,7 +71,7 @@ namespace Sundar.BLL.SSO
             {
                 var value = _helper.Get(null, requestUri);
                 var result = JsonHelper.Instance.Deserialize<Response<UserWithAccessedCtrls>>(value);
-                if (result.Code == 200)
+                if (result.Code == 1)
                 {
                     return result.Result;
                 }
@@ -90,27 +83,30 @@ namespace Sundar.BLL.SSO
             }
         }
 
-        public UserWithAccessedCtrls GetUser(string token, string requestid = "")
+        /// <summary>
+        /// 获取当前登录的用户名
+        /// <para>通过URL中的Token参数或Cookie中的Token</para>
+        /// </summary>
+        /// <param name="remark">The remark.</param>
+        /// <returns>System.String.</returns>
+        public static string GetUserName(string remark = "")
         {
-            var result = new UserWithAccessedCtrls();
+            var requestUri = String.Format("/api/Check/GetUserName?token={0}&requestid={1}", GetToken(), remark);
+
             try
             {
-                //var user = _objCacheProvider.GetCache(token);
-                //if (user != null)
-                //{
-                //    result.Result = _app.GetAccessedControls(user.Account);
-                //}
+                var value = _helper.Get(null, requestUri);
+                var result = JsonHelper.Instance.Deserialize<Response<string>>(value);
+                if (result.Code == 200)
+                {
+                    return result.Result;
+                }
+                throw new Exception(result.Message);
             }
             catch (Exception ex)
             {
-                //result.Code = 500;
-                //result.Message = ex.InnerException != null
-                //    ? "OpenAuth.WebAPI数据库访问失败:" + ex.InnerException.Message
-                //    : "OpenAuth.WebAPI数据库访问失败:" + ex.Message;
+                throw ex;
             }
-
-            return result;
-
         }
 
         /// <summary>

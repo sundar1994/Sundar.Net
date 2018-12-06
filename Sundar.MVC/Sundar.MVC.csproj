@@ -263,6 +263,7 @@
     <Content Include="Js\Sys\leftNav.js" />
     <Content Include="Js\Sys\orgs.js" />
     <Content Include="Js\UserJs\modules.js" />
+    <Content Include="Js\UserJs\roles.js" />
     <Content Include="Js\utils.js" />
     <Content Include="Js\vue.js" />
     <Content Include="Js\ztree.js" />
@@ -282,7 +283,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\layui\lay\modules\mobile\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\RoleManager\" />
     <Folder Include="Views\UserSession\" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +295,7 @@
     <Content Include="Views\OrgManager\Index.cshtml" />
     <Content Include="Views\ModuleManager\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\RoleManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sundar.BLL\Sundar.BLL.csproj">
