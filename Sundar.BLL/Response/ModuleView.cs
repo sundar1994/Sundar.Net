@@ -33,7 +33,7 @@ namespace Sundar.BLL.Response
         /// 父节点流水号
         /// </summary>
         /// <returns></returns>
-        public string ParentId { get; set; }
+        public int ParentId { get; set; }
 
         /// <summary>
         /// 父节点流水号

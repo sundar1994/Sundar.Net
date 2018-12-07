@@ -64,7 +64,7 @@
                 var newNode = { Name: "根节点", Id: 0, ParentId: "" };
                 json.push(newNode);
                 zTreeObj.addNodes(null, json);
-                mainList({ pId: "" });
+                mainList({ pId: 0 });
                 zTreeObj.expandAll(true);
             });
         };
