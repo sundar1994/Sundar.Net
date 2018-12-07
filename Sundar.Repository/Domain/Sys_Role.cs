@@ -14,7 +14,7 @@ namespace Sundar.Repository.Domain
             this.CreateTime = DateTime.Now;
             this.CreateId = string.Empty;
             this.TypeName = string.Empty;
-            this.TypeId = string.Empty;
+            this.TypeId = 0;
         }
 
         /// <summary>
@@ -40,6 +40,6 @@ namespace Sundar.Repository.Domain
         /// <summary>
 	    /// 分类ID
 	    /// </summary>
-        public string TypeId { get; set; }
+        public int TypeId { get; set; }
     }
 }

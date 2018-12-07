@@ -7,6 +7,24 @@ namespace Sundar.Repository.Domain
     /// </summary>
     public class Sys_Org : TreeEntity
     {
+        public Sys_Org()
+        {
+            this.CascadeId = string.Empty;
+            this.Name = string.Empty;
+            this.HotKey = string.Empty;
+            this.ParentName = string.Empty;
+            this.IconName = string.Empty;
+            this.Status = 0;
+            this.BizCode = string.Empty;
+            this.CustomCode = string.Empty;
+            this.CreateTime = DateTime.Now;
+            this.CreateId = 0;
+            this.SortNo = 0;
+            this.ParentId = 0;
+            this.TypeName = string.Empty;
+            this.TypeId = 0;
+        }
+
         /// <summary>
         /// 热键
         /// </summary>

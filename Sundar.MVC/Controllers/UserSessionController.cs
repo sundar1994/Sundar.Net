@@ -13,7 +13,6 @@ namespace Sundar.MVC.Controllers
     public class UserSessionController : Controller
     {
         UserWithAccessedCtrls user = AuthUtil.GetCurrentUser();
-        // public ModuleManagerBLL ModuleBLL { get; set; }
 
         /// <summary>
         /// 获取登录用户可访问的所有模块，及模块的操作菜单

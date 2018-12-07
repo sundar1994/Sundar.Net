@@ -33,11 +33,11 @@ namespace Sundar.BLL
             var service = Create(username);
             var user = new UserWithAccessedCtrls
             {
-                //  User = service.User,
-                // Orgs = service.Orgs,
+                User = service.User,
+                Orgs = service.Orgs,
                 Modules = service.Modules.OrderBy(u => u.SortNo).ToList().MapToList<ModuleView>(),
-                // Resources = service.Resources,
-                // Roles = service.Roles
+             //   Resources = service.Resources,
+                Roles = service.Roles
             };
 
             foreach (var moduleView in user.Modules)
