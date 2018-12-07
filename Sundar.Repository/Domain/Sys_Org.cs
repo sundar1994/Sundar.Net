@@ -5,7 +5,6 @@ namespace Sundar.Repository.Domain
     /// <summary>
     /// 后台用户组织表
     /// </summary>
-    [Serializable]
     public class Sys_Org : TreeEntity
     {
         /// <summary>

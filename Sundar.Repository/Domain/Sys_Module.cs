@@ -2,7 +2,6 @@
 
 namespace Sundar.Repository.Domain
 {
-    [Serializable]
     public class Sys_Module : TreeEntity
     {
         public Sys_Module()
