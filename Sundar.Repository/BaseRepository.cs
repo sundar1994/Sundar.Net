@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 using EntityFramework.Extensions;
 using Sundar.Repository.Domain;
 using Sundar.Repository.Interface;
+using Sundar.Common;
 
 namespace Sundar.Repository
 {
@@ -43,14 +44,14 @@ namespace Sundar.Repository
         /// <param name="pageindex">The pageindex.</param>
         /// <param name="pagesize">The pagesize.</param>
         /// <param name="orderby">排序，格式如："Id"/"Id descending"</param>
-        //public IQueryable<T> Find(int pageindex, int pagesize, string orderby = "", Expression<Func<T, bool>> exp = null)
-        //{
-        //    if (pageindex < 1) pageindex = 1;
-        //    if (string.IsNullOrEmpty(orderby))
-        //        orderby = "Id descending";
+        public IQueryable<T> Find(int pageindex, int pagesize, string orderby = "", Expression<Func<T, bool>> exp = null)
+        {
+            if (pageindex < 1) pageindex = 1;
+            if (string.IsNullOrEmpty(orderby))
+                orderby = "Id descending";
 
-        //    return Filter(exp).OrderBy(orderby).Skip(pagesize * (pageindex - 1)).Take(pagesize);
-        //}
+            return Filter(exp).OrderBy(orderby).Skip(pagesize * (pageindex - 1)).Take(pagesize);
+        }
 
         /// <summary>
         /// 根据过滤条件获取记录数

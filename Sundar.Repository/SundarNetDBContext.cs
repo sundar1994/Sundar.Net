@@ -31,9 +31,14 @@ namespace Sundar.Repository
         public System.Data.Entity.DbSet<Sys_ModuleElement> Sys_ModuleElement { get; set; }
         public System.Data.Entity.DbSet<Sys_Org> Sys_Org { get; set; }
         public System.Data.Entity.DbSet<Sys_Role> Sys_Role { get; set; }
+        public System.Data.Entity.DbSet<Relevance> Relevance { get; set; }
+        public System.Data.Entity.DbSet<Sys_User> Sys_User { get; set; }
+        //  public System.Data.Entity.DbSet<Resource> Resource { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+            modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
             //modelBuilder.Configurations.Add(new ());
 
             // InitializeMapping(modelBuilder);

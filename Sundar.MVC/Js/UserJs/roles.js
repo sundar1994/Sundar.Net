@@ -49,10 +49,10 @@
         var load = function () {
             $.getJSON(url, function (json) {
                 zTreeObj = $.fn.zTree.init($("#tree"), setting);
-                var newNode = { Name: "根节点", Id: null, ParentId: "" };
+                var newNode = { Name: "根节点", Id: 0, ParentId: "" };
                 json.push(newNode);
                 zTreeObj.addNodes(null, json);
-                mainList({ orgId: "" });
+                mainList({ orgId: 0 });
                 zTreeObj.expandAll(true);
             });
         };

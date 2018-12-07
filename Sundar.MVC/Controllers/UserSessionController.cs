@@ -66,5 +66,36 @@ namespace Sundar.MVC.Controllers
         {
             return JsonHelper.Instance.Serialize(user.Orgs);
         }
+
+        /// <summary>
+        /// 加载机构的全部下级机构
+        /// </summary>
+        /// <param name="orgId">机构ID</param>
+        /// <returns></returns>
+        public string GetSubOrgs(int orgId)
+        {
+            string cascadeId = ".0.";
+            if (orgId > 0)
+            {
+                var org = user.Orgs.SingleOrDefault(u => u.Id == orgId);
+                if (org == null)
+                {
+                    return JsonHelper.Instance.Serialize(new TableData
+                    {
+                        msg = "未找到指定的节点",
+                        code = 500,
+                    });
+                }
+                cascadeId = org.CascadeId;
+            }
+
+            var query = user.Orgs.Where(u => u.CascadeId.Contains(cascadeId));
+
+            return JsonHelper.Instance.Serialize(new TableData
+            {
+                data = query.ToList(),
+                count = query.Count(),
+            });
+        }
     }
 }
