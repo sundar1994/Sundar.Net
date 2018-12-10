@@ -17,6 +17,11 @@ namespace Sundar.WebApi
         private readonly ISwaggerProvider _swaggerProvider;
         private string _xmlPath;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="swaggerProvider"></param>
+        /// <param name="xmlPath"></param>
         public CachingSwaggerProvider(ISwaggerProvider swaggerProvider, string xmlPath)
         {
             _swaggerProvider = swaggerProvider;

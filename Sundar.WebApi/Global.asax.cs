@@ -5,8 +5,14 @@ using System.Web.Routing;
 
 namespace Sundar.WebApi
 {
+    /// <summary>
+    /// APP启动
+    /// </summary>
     public class WebApiApplication : System.Web.HttpApplication
     {
+        /// <summary>
+        /// API启动
+        /// </summary>
         protected void Application_Start()
         {
             AutofacExt.InitAutofac();

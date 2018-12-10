@@ -15,6 +15,10 @@ namespace Sundar.WebApi.Areas.SSO
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(

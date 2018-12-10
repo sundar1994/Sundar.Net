@@ -34,7 +34,7 @@ namespace Sundar.BLL.SSO
                 }
                 else
                 {
-                    var usermanager = (UserManagerApp)DependencyResolver.Current.GetService(typeof(UserManagerApp));
+                    var usermanager = (UserManagerBLL)DependencyResolver.Current.GetService(typeof(UserManagerBLL));
                     userInfo = usermanager.Get(model.Account);
                 }
 

@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Sundar.BLL
 {
-    public class UserManagerApp : BaseApp<Sys_User>
+    public class UserManagerBLL : BaseApp<Sys_User>
     {
         public RevelanceManagerBLL ReleManagerApp { get; set; }
 
@@ -103,7 +103,5 @@ namespace Sundar.BLL
                          select org;
             return result;
         }
-
-
     }
 }
